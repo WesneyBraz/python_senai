@@ -1,3 +1,5 @@
+import operacoes
+
 def input_str(mensagem):
     while True:
         try:
@@ -24,3 +26,6 @@ def input_float(mensagem):
         except:
             print("Valor inválido, por favor digite um numero.")
     return numero
+
+
+            
