@@ -10,3 +10,11 @@ def msg_log_inicial():
     print("<<<<<<< -- LOGAR NO SITEMA -- >>>>>>>>>\n")
     print("=======================================\n")
 
+def msg_menu_principal():
+    print("===============================================================\n")
+    print("#################### -- MENU PRINCIPAL -- #####################\n")
+    print("===============================================================\n")
+    print("####### SAIR - 0 | CALCULADORA - 1 | CALCULA FRETE - 2  ########\n")
+
+def msg_calculadora():
+    print("Calculadora")

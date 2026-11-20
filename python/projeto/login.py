@@ -1,5 +1,6 @@
 import mod_msg
 import mod_inputs
+import menu_principal
 
 USUARIO = "wesney"
 SENHA = "123456"
@@ -31,4 +32,4 @@ def main():
     senha_validada = valida_senha(SENHA)
     print("\nLogin realizado com Sucesso! \nUsuario:",usuario_validado)
     print("Senha:",senha_validada)
-        
+    menu_principal.main()

@@ -17,3 +17,21 @@ def recebe_senha(mensagem):
         except:
             print("Valor inválido!")
     return senha
+
+def recebe_int(mensagem):
+    while True:
+        try:
+            valor = int(input(mensagem))
+            break
+        except:
+            print("Valor inválido!")
+    return valor
+
+def recebe_float(mensagem):
+    while True:
+        try:
+            valor = int(input(mensagem).replace(",","."))
+            break
+        except:
+            print("Valor inválido!")
+    return valor
