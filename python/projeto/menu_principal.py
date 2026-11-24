@@ -1,23 +1,26 @@
 import mod_msg
 import mod_inputs
+import calculadora
+import calcula_frete
 
-def decisao():
+def recebe_opcao():
     while True:
-        escolha = mod_inputs.recebe_int("Digite o número de sua escolha: ")
-        match escolha:
+        opcao = mod_inputs.recebe_int("Digite uma opção do menu: ")
+        match opcao:
             case 0:
-                print("Sair")
-                break
+                print("Sair do Programa!")
             case 1:
-                print("Calculadora")
+                #print("Aqui chamo a calculadora!")
+                calculadora.main()
                 break
             case 2:
-                print("Calcula frete")
-                break
-            case _: 
-                print("Operação invalida")
-    return escolha
+                print("Aqui chamo Calcula Frete!")
+                calcula_frete.main()
+            case _:
+                print("Opção inválida!\n")
 
 def main():
-    mod_msg.msg_menu_principal()
-    decisao()
+    while True:
+        mod_msg.msg_menu_principal()
+        recebe_opcao()
+        break
