@@ -9,13 +9,15 @@ def recebe_opcao():
         match opcao:
             case 0:
                 print("Sair do Programa!")
+                break
             case 1:
                 #print("Aqui chamo a calculadora!")
                 calculadora.main()
                 break
             case 2:
-                print("Aqui chamo Calcula Frete!")
+                #print("Aqui chamo Calcula Frete!")
                 calcula_frete.main()
+                break
             case _:
                 print("Opção inválida!\n")
 

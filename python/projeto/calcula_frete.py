@@ -1,14 +1,27 @@
 import math
 import mod_inputs
 import mod_msg
+import mod_finaliza
 
 def formula(y,x,z,w,d,embalagem):
     if(embalagem == 1):
         f = 0.37
-        resultado = ((y*x*z*w)*(1+f))*(1+(d*9.8))
+        resultado = round(((y*x*z*w)*(1+f))*(1+(d*9.8)),2) 
+        print("x:",x)
+        print("y:",y)
+        print("z:",z)
+        print("w:",w)
+        print("Formula: ((",y,"*",x,"*",z,"*",w,")*(1+",f,"))*(1+(",d,"*9.8))")
+        print("Resultado:",resultado)
     else:
         f = 0.26
-        resultado = ((y*x*z*w)*(1+f))*(1+(d*9.8))
+        resultado = round(((y*x*z*w)*(1+f))*(1+(d*9.8)),2) 
+        print("x:",x)
+        print("y:",y)
+        print("z:",z)
+        print("w:",w)
+        print("Formula: ((",y,"*",x,"*",z,"*",w,")*(1+",f,"))*(1+(",d,"*9.8))")
+        print("Resultado:",resultado)
     return resultado
 
 def unidade_medida(embalagem):
@@ -55,18 +68,20 @@ def recebe_embalagem():
     return unidade
 
 def main():
-    mod_msg.msg_aeroporto_destino()
-    d = recebe_aeroporto()
+    start = True
+    while start:
+        mod_msg.msg_aeroporto_destino()
+        d = recebe_aeroporto()
 
-    mod_msg.msg_embalagem()
-   
-    mod_msg.msg_medidas(unidade)
-    y = mod_inputs.recebe_float("Digite a altura: ")
-    x = mod_inputs.recebe_float("Digite a largura: ")
-    z = mod_inputs.recebe_float("Digite a profundidade: ")
-    w = mod_inputs.recebe_float("Digite o peso: ")
-    formula(y,x,z,w,d,embalagem)
-    print("x:",x)
-    print("y:",y)
-    print("z:",z)
-    print("w:",w)
+        mod_msg.msg_embalagem()
+        unidade = recebe_embalagem()
+
+        mod_msg.msg_medidas(unidade)
+        y = mod_inputs.recebe_float("Digite a altura: ")
+        x = mod_inputs.recebe_float("Digite a largura: ")
+        z = mod_inputs.recebe_float("Digite a profundidade: ")
+        w = mod_inputs.recebe_float("Digite o peso: ")
+        formula(y,x,z,w,d,unidade)
+        start = mod_finaliza.finaliza_programa()
+
+
